@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'org.openjfx.javafxplugin' version '0.0.12'
+}
+
+group 'consulting.saladinobelisario'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+javafx {
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.graphics', 'javafx.web' ]
+}
+
+dependencies {
+    implementation(
+            ['com.sun.mail:jakarta.mail:2.0.1'],
+            ['javax.activation:activation:1.1.1']
+    )
+    testImplementation(
+            ['org.junit.jupiter:junit-jupiter-api:5.8.2'],
+            ['org.mockito:mockito-all:1.10.19']
+    )
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+test {
+    useJUnitPlatform()
+}
